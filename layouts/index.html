@@ -8,7 +8,18 @@
 
 <body>
     <nav role="navigation" class="flex-container" id="splash">
-
+        {{ if .Site.Params.mainPageTitle }}
+            <span class="big-title">
+                {{ .Site.Params.mainPageTitle }}
+            </span>
+        {{ end }}
+        {{ if .Site.Params.mainPageSubtitle }}
+            <span class="medium-title">
+                {{ .Site.Params.mainPageSubtitle }}
+                <br><br>
+        
+            </span>
+        {{ end }}
         {{ if .Site.Params.mainMenu }}
         {{ range .Site.Params.mainMenu }}
             <a href="{{.link}}" class="big-link">
